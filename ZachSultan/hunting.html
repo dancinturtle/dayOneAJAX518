@@ -7,19 +7,34 @@
     <title>Hunting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-        $(document).ready(function(){
-            let name = document.getElementById("name");
-            $.get(
-                'https://api.github.com/users/LawerenceLee',
-                response => 
-                {
-                    name.textContent = response.login;
-                }
-            )
+        $(document).ready(function() {
+
+            function githubAjax() {
+                const username = document.getElementById('username');
+                const url = `https://api.github.com/users/${username.value}`;
+
+                const h1name = document.getElementById("h1name");
+                h1name.textContent = "Username: ";
+
+                const pubRepos = document.getElementById("pubRepos");
+                pubRepos.textContent = "Public Repos: ";
+                
+                $.get(url, response => 
+                    {
+                    h1name.textContent = response.login; 
+                    pubRepos.textContent += response.public_repos;
+                    },
+                'json')
+            }
+            document.getElementById("bttn").addEventListener('click', githubAjax)
         });
     </script>
 </head>
+
 <body>
-    <h1 id="name"></h1>
+    <h1 id="h1name"></h1>
+    <h3 id="pubRepos"></h3>
+    <input type="text" placeholder="Github Username" id="username">
+    <button id="bttn">GO</button>
 </body>
 </html>
