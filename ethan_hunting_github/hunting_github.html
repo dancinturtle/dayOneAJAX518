@@ -1,0 +1,20 @@
+<html>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#wrapper").append("<input type='submit' value='button'>");
+    $(document).on('click', 'input', function(){
+    $.get("https://api.github.com/users/ethanlow23", displayName);
+    // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+    function displayName(data) {
+        console.log(data);
+        $("#wrapper").append("<p>" + data["login"] + "</p>");
+    };
+    });
+});
+</script>
+<body>
+    <div id=wrapper></div>
+</body>
+</html>
