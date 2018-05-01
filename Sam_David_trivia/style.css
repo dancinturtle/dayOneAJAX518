@@ -1,0 +1,14 @@
+.column {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    width: 25%;
+}
+.question {
+    min-height: 100px;
+    background-color: aquamarine;
+    margin: 10px;
+}
+.answered {
+    background-color: lightgray;
+}
