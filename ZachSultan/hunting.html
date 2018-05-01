@@ -12,7 +12,7 @@
             $.get(
                 'https://api.github.com/users/LawerenceLee',
                 response => 
-                {
+                {   console.log(response);
                     name.textContent = response.login;
                 }
             )
