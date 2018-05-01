@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        $(document).ready(function(){
+            $.get('https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=multiple', function(data){
+                var k = 0;
+                for(var i in data.results){
+                    
+                    console.log((k+1) + data.results[i].question);
+                    k+=1
+                    for(var x in data.results[i].incorrect_answers){
+                        console.log(data.results[i].incorrect_answers[x])
+                    }
+                    console.log(data.results[i].correct_answer)
+                    $('.append').append("<p>"+ (k) + ". "+ data.results[i].question + "<p>");
+                    $('.append').append("<p>" + data.results[i].incorrect_answers[0] + "<p>");
+                    $('.append').append("<p>" + data.results[i].incorrect_answers[1] + "<p>");
+                    $('.append').append("<p>" + data.results[i].incorrect_answers[2] + "<p>");                
+                    $('.append').append("<p>" + data.results[i].correct_answer + "<p>");       
+                           
+                }
+                    
+            });
+        })
+    </script>
+</head>
+<body>
+    <h2 class = "append text">HQ Trivia</h2>
+</body>
+</html>
