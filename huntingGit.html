@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hunting Github!</title>
+</head>
+<script>
+    $(document).ready(function() { 
+        function displayName(data){ 
+            this.name = data["login"]
+            $("#logName").html(this.name);
+            // console.log(this.name); 
+        };
+        $("#butt").on('click', function() {
+            var info = $.get("https://api.github.com/users/smilingKnite", displayName )
+        });
+        // $('#butt').off('click', function(){
+        //     $("#logName").html();
+        // });
+ });
+</script>
+<body>
+<h4 id="logName">Hello, Friend.</h4>
+<br>
+<button id="butt">Click me to display the developers Github name!</button>
+</body>
+</html>
