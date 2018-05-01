@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id = "clickme">Click Me!</button>
+    <p id="ghubname"></p>
+
+    <script>
+        $("#clickme").click(function() {
+            $.get("https://api.github.com/users/dirtyhoops", displayName)
+            // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+            function displayName(data) {
+                $("#ghubname").text(data.name);
+            }
+        })
+    </script>
+
+</body>
+</html>
