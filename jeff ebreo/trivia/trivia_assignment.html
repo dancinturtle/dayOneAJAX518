@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>trivia assigment</title>
+
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    	$(document).ready( function (){
+    		function displayCard(data){
+    			$('body').append(data['results'][0]['question']+"<br>");
+    			$('body').append(data['results'][0]['correct_answer']+"<br>");
+
+    			console.log(data.results)
+    			this.general_knowledge = data['category'];
+
+
+    		}
+
+		 	$('#btn').on("click", function() {
+		 		$.get("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=boolean", displayCard);
+
+  			});
+		});
+</script>
+
+</head>
+<body>
+	<div>
+
+
+		<button id="btn">Trivia Game</button>
+
+
+
+
+
+
+
+
+	<!-- <h1>Trivia Night</h1>
+	<h2>points</h2>
+	<div id="continue"></div>
+	<div class="box">
+		<h3>Geography</h3>
+        <div class="question" points="100" category="22" difficulty="easy"><p>100</p></div>
+        <div class="question" points="200" category="22" difficulty="medium"><p>200</p></div>
+        <div class="question" points="300" category="22" difficulty="hard"><p>300</p></div>
+	</div>
+	<div class="box">
+		<h3>Entertainment</h3>
+        <div class="question" points="100" category="22" difficulty="easy"><p>100</p></div>
+        <div class="question" points="200" category="22" difficulty="medium"><p>200</p></div>
+        <div class="question" points="300" category="22" difficulty="hard"><p>300</p></div>
+	</div>
+	<div class="box">
+		<h3>Science</h3>
+        <div class="question" points="100" category="22" difficulty="easy"><p>100</p></div>
+        <div class="question" points="200" category="22" difficulty="medium"><p>200</p></div>
+        <div class="question" points="300" category="22" difficulty="hard"><p>300</p></div>
+	</div> -->
+
+
+
+
+</body>
+</html>

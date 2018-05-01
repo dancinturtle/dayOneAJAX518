@@ -1,0 +1,13 @@
+.box {
+display: inline-block;
+vertical-align: top;
+margin: 20px;
+width: 225px;
+	
+ }
+
+ .question {
+min-height: 100px;
+background-color: aquamarine;
+margin: 10px;
+}
