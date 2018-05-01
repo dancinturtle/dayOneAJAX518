@@ -1,0 +1,48 @@
+/*CSS reset settings here*/
+/* Jim_W */
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: "Arial", Verdana, sans-serif;
+
+}
+body 
+{
+    color: white;
+    font-size: 14px ;
+}
+#wrapper {
+    width: 970px;
+    color: black;
+}
+.column {
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+.detailCol {
+    width: 300px;  
+    background-color: red;
+    padding:30;
+}
+#detailPanel {
+    display: block;
+    background-color: white;
+    height: 400px;
+    width: 240px;
+    margin: 30px;
+    text-align: center;
+}
+.header {
+    color: black;
+    margin: 20px;
+}
+.poke {
+    width: 100px;
+    height:100px;
+    color: red;
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+}
