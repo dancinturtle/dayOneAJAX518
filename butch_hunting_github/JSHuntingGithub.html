@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="jshuntinggithub.css">
+	<script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.Append').click(function(){$.get("https://api.github.com/users/coding-spartan", displayName);
+            function displayName(data) {
+            console.log(data);
+            $('.append').append("<p>" + data["login"] + "</p>");
+        };
+    });
+});
+ </script>  
+</head>
+<body>
+    <div class="wrapper">
+    <h1 class="headertext">Hunting Github</h1>
+    <div class="box">
+        <button class="Append button">Get GitHub Name</button>
+          <div class="boxrightarea">
+             <h1 class="append text">Click the button to know my name...</h1>
+          </div>
+    </div>
+</body>
+</html>
+
+
+
