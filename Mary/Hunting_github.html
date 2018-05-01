@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
         $(document).ready(function(){
-            let name = document.getElementById("name");
+            var name = document.getElementById("name");
             $.get(
-                'https://api.github.com/users/LawerenceLee',
+                'https://api.github.com/users/Mary-raccoon',
                 response => 
                 {
                     name.textContent = response.login;
                 }
             )
         });
+         
     </script>
 </head>
 <body>
