@@ -1,27 +1,19 @@
-
-
-
-
-
-
 		
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 <body>
-<button id="btn">Github Name</button>
+	<h2> HUNTING GITHUB </h2>
+	<button id="btn">Github Name</button>
 <script>
-$('#btn').click(function(){
-	$.get("https://api.github.com/users/ebreoj", displayName)
-});
-	
-function displayName(data) {
-  $('body').append("<br>"+data.login+"<br>");
-  setTimeout( function (){ console.log(data); }, 2000 );
-}
-
-   
+	$('#btn').click(function(){
+		$.get("https://api.github.com/users/ebreoj", displayName)
+	});
+	function displayName(data) {
+		$('body').append("<br>"+data.login+"<br>");
+		setTimeout( function (){ console.log(data); }, 2000 );
+	}
 
 </script>
 </body>
@@ -29,3 +21,9 @@ function displayName(data) {
 
 </script>
 </html>
+
+
+
+
+
+
