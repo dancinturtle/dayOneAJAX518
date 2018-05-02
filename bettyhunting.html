@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    
+</head>
+<body>
+    <button onclick="myFunction1()">Click me</button>
+
+    <p id="d"></p>
+    <script>
+    function myFunction1() {
+      $.get("https://api.github.com/users/BettyChina", myFunction)
+      function myFunction(data) {
+      document.getElementById("d").innerHTML = data.login;
+      console.log(data);
+      }   
+    }
+    </script>
+</body>
+</html>
